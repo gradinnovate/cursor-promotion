@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 主色系 - 藍色 */
+  --primary: #3B82F6;
+  --primary-hover: #2563EB;
+  --primary-light: #EFF6FF;
+  
+  /* 中性色系 */
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --background: #F9FAFB;
+  --border: #E5E7EB;
+  
+  /* 功能色 */
+  --error: #DC2626;
+  --error-light: #FEE2E2;
+  --success: #16A34A;
+  --success-light: #DCFCE7;
+  --warning: #F59E0B;
+  --warning-light: #FEF3C7;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50;
+    color: var(--text-primary);
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+  }
+
+  p {
+    color: var(--text-secondary);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 
+           px-4 py-2 rounded-lg font-medium 
+           transition-colors duration-200 
+           shadow-sm hover:shadow;
+  }
+
+  .btn-secondary {
+    @apply text-gray-600 hover:text-gray-900 
+           px-4 py-2 rounded-lg font-medium 
+           transition-colors duration-200;
+  }
+
+  .input-primary {
+    @apply rounded-lg border border-gray-300 
+           bg-white/90 backdrop-blur-sm shadow-sm 
+           focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
+           px-4 py-2 transition-all duration-200;
+  }
+}
+
+/* 自定義滾動條樣式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}
